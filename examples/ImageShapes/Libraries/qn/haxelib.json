@@ -1,0 +1,11 @@
+{
+	"name": "qn",
+	"url" : "https://gitlab.com/lewislepton/luova",
+	"license": "MIT",
+	"tags": ["physics"],
+	"description": "quick nape",
+	"version": "0.0.1",
+	"contributors": ["lewislepton"],
+	"classPath": "Sources",
+	"dependencies" : { "nape" : "" }
+}
