@@ -2,7 +2,7 @@
 
 pronounced 'queen', but actually stands for 'quick nape'
 
-a simple wrapper to use the awesome ![nape](http://napephys.com) physics with ![kha](http://kha.tech). 
+a simple wrapper to use the awesome [nape](http://napephys.com) physics with [kha](http://kha.tech). 
 
 currently in super beta & needs tons of work for everything else. but its meant to make things just a wee bit simpler to get things up & running
 
