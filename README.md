@@ -15,9 +15,9 @@ in your kha projects `khafile.js` - put in this `project.addLibrary('qn');`
 also check out the given example
 
 # TODO
-• work further on world class further & make it cut out using space in the project
-• work on bouncing stuff
-• extend things further
-• make more examples
-• able to change rotation point. so far its only in the middle
-• many more things... but cant think right now ;)
+- [ ] work further on world class further & make it cut out using space in the project<br>
+- [ ] work on bouncing stuff<br>
+- [ ] extend things further<br>
+- [ ] make more examples<br>
+- [ ] able to change rotation point. so far its only in the middle<br>
+- [ ] many more things... but cant think right now ;)
