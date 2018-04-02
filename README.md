@@ -12,7 +12,7 @@ simply open up terminal/command line & type [or just copy this next bit of code]
 # HOW TO USE
 in your kha projects `khafile.js` - put in this `project.addLibrary('qn');`
 
-also check out the given example
+also check out the given example[s]
 
 # TODO
 - [ ] work further on world class further & make it cut out using space in the project<br>
