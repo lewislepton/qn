@@ -1,4 +1,4 @@
-# QN
+# qn
 
 pronounced 'queen', but actually stands for 'quick nape'
 
@@ -6,15 +6,15 @@ a simple wrapper to use the awesome [nape](http://napephys.com) physics with [kh
 
 currently in super beta & needs tons of work for everything else. but its meant to make things just a wee bit simpler to get things up & running
 
-# INSTALL
+# install
 simply open up terminal/command line & type [or just copy this next bit of code] `haxelib install git qn https://github.com/lewislepton/qn.git`
 
-# HOW TO USE
+# how to use
 in your kha projects `khafile.js` - put in this `project.addLibrary('qn');`
 
 also check out the given example[s]
 
-# TODO
+# todo
 - [ ] work further on world class further & make it cut out using space in the project<br>
 - [ ] work on bouncing stuff<br>
 - [ ] extend things further<br>
