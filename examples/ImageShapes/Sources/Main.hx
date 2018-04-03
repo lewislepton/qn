@@ -10,7 +10,7 @@ public static var HEIGHT = 768;
 public static var SPP = 3;
 	public static function main(){
 		System.init({
-			title:"Project",
+			title:"image shapes - qn",
 			width:WIDTH,
 			height:HEIGHT,
 			samplesPerPixel:SPP

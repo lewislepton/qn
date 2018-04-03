@@ -3,16 +3,12 @@ import kha.Color;
 import kha.Image;
 import kha.Assets;
 
-import nape.space.Space;
-import qn.shape.Circle.CImage;
+import qn.World;
+import qn.Body.CircleImage;
 
-class CirclePlayer extends CImage {
-	public function new(space:Space){
-		super(space, Assets.images.circle);
-	}
-
-	public function update(){
-		
+class CirclePlayer extends CircleImage {
+	public function new(){
+		super(World.space, Assets.images.circle);
 	}
 
 	override public function render(graphics:Graphics){

@@ -3,13 +3,12 @@ import kha.Color;
 import kha.Image;
 import kha.Assets;
 
-import nape.space.Space;
+import qn.World;
+import qn.Body.RectImage;
 
-import qn.shape.Rect.RImage;
-
-class RectPlayer extends RImage {
-	public function new(space:Space){
-		super(space, Assets.images.rect);
+class RectPlayer extends RectImage {
+	public function new(){
+		super(World.space, Assets.images.rect);
 	}
 
 	public function update(){

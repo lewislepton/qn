@@ -5,35 +5,52 @@ import kha.Color;
 import kha.Assets;
 import kha.input.Mouse;
 
-import nape.space.Space;
-
+import qn.World;
 import CirclePlayer;
 import RectPlayer;
 
+/*
+MATERIAL CHEAT SHEET
+wood
+0.4,0.2,0.38,0.7,0.005
+steel
+0.2,0.57,0.74,7.8,0.001
+ice
+0.3,0.03,0.1,0.9,0.0001
+rubber
+0.8,1.0,1.4,1.5,0.01
+glass
+0.4,0.4,0.94,2.6,0.002
+sand
+-1.0,0.45,0.6,1.6,16.0
+*/
+
 class Project {
-	var space:Space;
 	var circlePlayer:CirclePlayer;
 	var rectPlayer:RectPlayer;
 	
 	public function new(){
-		space = new Space();
+		World.setup(0, 300);
+		// World.linearDrag(30);
+		// World.angularDrag(30);
 
-		circlePlayer = new CirclePlayer(space);
-		circlePlayer.body.position.x = 256;
-		circlePlayer.body.position.y = 256;
-
-		rectPlayer = new RectPlayer(space);
+		rectPlayer = new RectPlayer();
 		rectPlayer.body.position.x = Main.WIDTH / 2;
 		rectPlayer.body.position.y = Main.HEIGHT / 2;
-
+		rectPlayer.material(1.0, 0.7);
 		rectPlayer.body.allowMovement = false;
-		rectPlayer.body.allowRotation = true;
+		rectPlayer.body.allowRotation = false;
+
+		circlePlayer = new CirclePlayer();
+		circlePlayer.body.position.x = Main.WIDTH / 2;
+		circlePlayer.body.position.y = 0;
+		circlePlayer.material(1.0, 0.3);
 
 		Mouse.get().notify(null, null, onMouseMove, null);
 	}
 
 	public function update():Void {
-		space.step(1 / 60);
+		World.update(1 / 60);
 	}
 
 	public function render(framebuffer:Framebuffer):Void {
@@ -45,7 +62,7 @@ class Project {
 	}
 
 	public function onMouseMove(x:Int, y:Int, mx:Int, my:Int):Void {
-		circlePlayer.body.position.x = x;
-		circlePlayer.body.position.y = y;
+		// circlePlayer.body.position.x = x;
+		// circlePlayer.body.position.y = y;
 	}
 }
