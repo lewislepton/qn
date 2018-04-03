@@ -13,6 +13,7 @@ import kha.Image;
 
 import nape.space.Space;
 import nape.phys.Body;
+import nape.phys.BodyType;
 import nape.shape.Circle;
 import nape.shape.Polygon;
 import nape.geom.Vec2;
@@ -41,8 +42,9 @@ class CircleShape {
 	public var body:Body;
 	public var shape:Circle;
 
-	public function new(space:Space, ?radius:Float = 32){
+	public function new(space:Space, ?radius:Float = 32, ?sensorEnabled:Bool = false){
 		this.radius = radius;
+
 		body = new Body();
 		shape = new Circle(radius / 2);
 		shape.body = body;
@@ -61,6 +63,26 @@ class CircleShape {
 	public function material(?elastic:Float = 1, ?dynamicFriction:Float = 0.2, ?staticFriction:Float = 0.4, ?density:Float = 1, ?rotateFriction:Float = 0.001):Void {
 		if (body == null) return;
 		body.setShapeMaterials(new Material(elastic, dynamicFriction, staticFriction, density, rotateFriction));
+	}
+
+	public function impulse(x:Float, y:Float):Body {
+		return body.applyImpulse(new Vec2(x, y));
+	}
+
+	public function impulseRotate(value:Float):Body {
+		return body.applyAngularImpulse(value);
+	}
+
+	public function allowMovement(value:Bool = false):Bool {
+		return body.allowMovement = value;
+	}
+
+	public function allowRotation(value:Bool = false):Bool {
+		return body.allowRotation = value;
+	}
+
+	public function sensorEnabled(value:Bool = false):Bool {
+		return shape.sensorEnabled = value;
 	}
 
 	// public function setMaterials(?material:Material):Body {
@@ -97,6 +119,26 @@ class CircleImage {
 		if (body == null) return;
 		body.setShapeMaterials(new Material(elastic, dynamicFriction, staticFriction, density, rotateFriction));
 	}
+
+	public function impulse(x:Float, y:Float):Body {
+		return body.applyImpulse(new Vec2(x, y));
+	}
+
+	public function impulseRotate(value:Float):Body {
+		return body.applyAngularImpulse(value);
+	}
+
+	public function allowMovement(value:Bool = false):Bool {
+		return body.allowMovement = value;
+	}
+
+	public function allowRotation(value:Bool = false):Bool {
+		return body.allowRotation = value;
+	}
+
+	public function sensorEnabled(value:Bool = false):Bool {
+		return shape.sensorEnabled = value;
+	}
 }
 ///
 
@@ -108,7 +150,7 @@ class RectShape {
 	public var body:Body;
 	public var shape:Polygon;
 
-	public function new(space:Space, ?width:Float = 64, ?height:Float = 64){
+	public function new(space:Space, ?width:Float = 64, ?height:Float = 64, ?sensorEnabled:Bool = false){
 		this.width = width;
 		this.height = height;
 
@@ -131,6 +173,26 @@ class RectShape {
 		if (body == null) return;
 		body.setShapeMaterials(new Material(elastic, dynamicFriction, staticFriction, density, rotateFriction));
 	}
+
+	public function impulse(x:Float, y:Float):Body {
+		return body.applyImpulse(new Vec2(x, y));
+	}
+
+	public function impulseRotate(value:Float):Body {
+		return body.applyAngularImpulse(value);
+	}
+
+	public function allowMovement(value:Bool = false):Bool {
+		return body.allowMovement = value;
+	}
+
+	public function allowRotation(value:Bool = false):Bool {
+		return body.allowRotation = value;
+	}
+
+	public function sensorEnabled(value:Bool = false):Bool {
+		return shape.sensorEnabled = value;
+	}
 }
 
 class RectImage {
@@ -139,7 +201,7 @@ class RectImage {
 
   public var image:Image;
 
-	public function new(space:Space, image:Image){
+	public function new(space:Space, image:Image, ?sensorEnabled:Bool = false){
 		this.image = image;
 
 		body = new Body();
@@ -160,6 +222,26 @@ class RectImage {
 	public function material(elastic:Float = 1, dynamicFriction:Float = 0.2, ?staticFriction:Float = 0.4, ?density:Float = 1, rotateFriction:Float = 0.001):Void {
 		if (body == null) return;
 		body.setShapeMaterials(new Material(elastic, dynamicFriction, staticFriction, density, rotateFriction));
+	}
+
+	public function impulse(x:Float, y:Float):Body {
+		return body.applyImpulse(new Vec2(x, y));
+	}
+
+	public function impulseRotate(value:Float):Body {
+		return body.applyAngularImpulse(value);
+	}
+
+	public function allowMovement(value:Bool = false):Bool {
+		return body.allowMovement = value;
+	}
+
+	public function allowRotation(value:Bool = false):Bool {
+		return body.allowRotation = value;
+	}
+
+	public function sensorEnabled(value:Bool = false):Bool {
+		return shape.sensorEnabled = value;
 	}
 }
 ///
