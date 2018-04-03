@@ -15,7 +15,7 @@ in your kha projects `khafile.js` - put in this `project.addLibrary('qn');`
 also check out the given example[s]
 
 # todo
-- [ ] work further on world class further & make it cut out using space in the project<br>
+- [X] work further on world class further & make it cut out using space in the project<br>
 - [ ] work on bouncing stuff<br>
 - [ ] extend things further<br>
 - [ ] make more examples<br>
