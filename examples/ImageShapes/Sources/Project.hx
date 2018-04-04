@@ -35,15 +35,13 @@ class Project {
 		// World.angularDrag(30);
 
 		rectPlayer = new RectPlayer();
-		rectPlayer.body.position.x = Main.WIDTH / 2;
-		rectPlayer.body.position.y = Main.HEIGHT / 2;
+		rectPlayer.position(Main.WIDTH / 2, Main.HEIGHT / 2);
 		rectPlayer.material(1.0, 0.7);
-		rectPlayer.body.allowMovement = false;
-		rectPlayer.body.allowRotation = false;
+		rectPlayer.allowMovement(false);
+		rectPlayer.allowRotation(false);
 
 		circlePlayer = new CirclePlayer();
-		circlePlayer.body.position.x = Main.WIDTH / 2;
-		circlePlayer.body.position.y = 0;
+		circlePlayer.position(Main.WIDTH / 2, 0);
 		circlePlayer.material(1.0, 0.3);
 
 		Mouse.get().notify(null, null, onMouseMove, null);
@@ -62,7 +60,6 @@ class Project {
 	}
 
 	public function onMouseMove(x:Int, y:Int, mx:Int, my:Int):Void {
-		// circlePlayer.body.position.x = x;
-		// circlePlayer.body.position.y = y;
+		// circlePlayer.position(x, y);
 	}
 }
