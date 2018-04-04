@@ -9,7 +9,7 @@ currently in super beta & needs tons of work for everything else. but its meant 
 # install
 simply open up terminal/command line & type [or just copy this next bit of code]
 	
-	haxelib install git qn https://github.com/lewislepton/qn.git
+	haxelib git qn https://github.com/lewislepton/qn.git
 
 # how to use
 in your kha projects `khafile.js` - put in this
