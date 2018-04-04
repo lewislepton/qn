@@ -103,9 +103,9 @@ class Project {
 		graphics.font = font;
 		graphics.fontSize = 64;
 		graphics.color = Color.Black;
-		graphics.drawString('collision top: ' + collideScoreTop, 256, 64);
-		graphics.drawString('collision bottom: ' + collideScoreBottom, 256, Main.HEIGHT - 96);
-		graphics.drawString('sensor: ' + sensorScore, 256, Main.HEIGHT / 2);
+		graphics.drawString('collision: ' + collideScoreTop, 128, 64);
+		graphics.drawString('collision: ' + collideScoreBottom, 128, Main.HEIGHT - 96);
+		graphics.drawString('sensor: ' + sensorScore, 128, Main.HEIGHT / 2);
 		graphics.end();
 	}
 
