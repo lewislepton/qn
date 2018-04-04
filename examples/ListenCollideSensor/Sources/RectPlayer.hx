@@ -16,6 +16,7 @@ class RectPlayer extends RectImage {
 	}
 
 	override public function render(graphics:Graphics){
+		graphics.color = Color.White;
 		super.render(graphics);
 	}
 }

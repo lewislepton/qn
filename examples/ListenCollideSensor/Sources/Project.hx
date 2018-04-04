@@ -13,44 +13,57 @@ import RectPlayer;
 import CirclePlayer;
 
 class Project {
+	var sensorListenMiddle:Listen;
+	var collideListenBottom:Listen;
+	var collideListenTop:Listen;
+
 	var rectListener:RectPlayer;
-	var rectPlayer:RectPlayer;
+	var rectTop:RectPlayer;
+	var rectBottom:RectPlayer;
+
 	var circlePlayer:CirclePlayer;
 
 	var font:Font;
-	var collideScore:Int;
-	var sensorScore:Int;
+	var collideScoreBottom:Int = 0;
+	var collideScoreTop:Int = 0;
+	var sensorScore:Int = 0;
 
 	public function new(){
 		World.setup(0, 300);
-		
-		Listen.setupCollision();
-		Listen.setupSensor();
+		sensorListenMiddle = new Listen(2);
+		collideListenBottom = new Listen(1);
+		collideListenTop = new Listen(1);
 
 		rectListener = new RectPlayer();
-		rectListener.body.position.x = Main.WIDTH / 2;
-		rectListener.body.position.y = Main.HEIGHT / 2;
-		rectListener.body.cbTypes.add(Listen.collision);
-
+		rectListener.position(Main.WIDTH / 2, Main.HEIGHT / 2);
+		rectListener.addType(sensorListenMiddle.collision);
 		rectListener.allowRotation(true);
 		rectListener.allowMovement(false);
 		rectListener.sensorEnabled(true);
 
 		circlePlayer = new CirclePlayer();
-		circlePlayer.body.position.x = Main.WIDTH / 2;
-		circlePlayer.body.position.y = 64;
+		circlePlayer.position(Main.WIDTH / 2, 64);
 		circlePlayer.material(3.0, 0.0);
-		circlePlayer.body.cbTypes.add(Listen.collision);
 		circlePlayer.sensorEnabled(false);
+		circlePlayer.addType(sensorListenMiddle.collision);
+		circlePlayer.addType(collideListenBottom.collision);
+		circlePlayer.addType(collideListenTop.collision);
 
-		rectPlayer = new RectPlayer();
-		rectPlayer.body.position.x = Main.WIDTH / 2;
-		rectPlayer.body.position.y = Main.HEIGHT - 64;
-		rectPlayer.body.cbTypes.add(Listen.collision);
-		circlePlayer.material(3.0, 0.0);
-		rectPlayer.allowMovement(false);
-		rectPlayer.allowRotation(false);
-		rectPlayer.sensorEnabled(false);
+		rectTop = new RectPlayer();
+		rectTop.position(Main.WIDTH / 2, Main.HEIGHT - 64);
+		rectTop.addType(collideListenBottom.collision);
+		rectTop.material(3.0, 0.0);
+		rectTop.allowMovement(false);
+		rectTop.allowRotation(false);
+		rectTop.sensorEnabled(false);
+
+		rectBottom = new RectPlayer();
+		rectBottom.position(Main.WIDTH / 2, 128);
+		rectBottom.addType(collideListenTop.collision);
+		rectBottom.material(3.0, 0.0);
+		rectBottom.allowMovement(false);
+		rectBottom.allowRotation(false);
+		rectBottom.sensorEnabled(false);
 
 		font = Assets.fonts.Exo_Thin;
 
@@ -59,38 +72,56 @@ class Project {
 
 	public function update():Void {
 		World.update(1 / 60);
-		rectListener.impulseRotate(100);
 
-		if (Listen.hasCollided){
-			collideScore += 1;
-			Listen.hasCollided = false;
+		if (collideListenBottom.hasCollided){
+			trace('COLLIDE BOTTOM');
+			collideScoreBottom += 1;
+			collideListenBottom.hasCollided = false;
 		}
 
-		if (Listen.hasSensored){
+		if (sensorListenMiddle.hasSensored){
+			trace('SENSORED CENTER');
 			sensorScore += 1;
-			Listen.hasSensored = false;
+			sensorListenMiddle.hasSensored = false;
+		}
+
+		if (collideListenTop.hasCollided){
+			trace('COLLIDE TOP');
+			collideScoreTop += 1;
+			collideListenTop.hasCollided = false;
 		}
 	}
 
 	public function render(framebuffer:Framebuffer):Void {
 		var graphics = framebuffer.g2;
-		graphics.begin();
+		graphics.begin(true, Color.fromFloats(0.67, 0.82, 0.42, 1.00));
 		rectListener.render(graphics);
-		rectPlayer.render(graphics);
+		rectTop.render(graphics);
+		rectBottom.render(graphics);
 		circlePlayer.render(graphics);
 
 		graphics.font = font;
 		graphics.fontSize = 64;
-		graphics.drawString('' + collideScore, 32, 32);
-		graphics.drawString('' + sensorScore, 32, 128);
+		graphics.color = Color.Black;
+		graphics.drawString('collision top: ' + collideScoreTop, 256, 64);
+		graphics.drawString('collision bottom: ' + collideScoreBottom, 256, Main.HEIGHT - 96);
+		graphics.drawString('sensor: ' + sensorScore, 256, Main.HEIGHT / 2);
 		graphics.end();
 	}
 
 	public function onMouseDown(button:Int, x:Int, y:Int):Void {
-		rectListener.sensorEnabled(false);
+		if (button == 0){
+			rectBottom.sensorEnabled(true);
+		} else if (button == 1){
+			rectListener.impulseRotate(200);
+		}
 	}
 
 	public function onMouseUp(button:Int, x:Int, y:Int):Void {
-		rectListener.sensorEnabled(true);
+		if (button == 0){
+			rectBottom.sensorEnabled(false);
+		} else if (button == 1){
+			rectListener.impulseRotate(0);
+		}
 	}
 }

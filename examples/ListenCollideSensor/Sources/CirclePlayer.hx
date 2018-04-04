@@ -12,6 +12,7 @@ class CirclePlayer extends CircleImage {
 	}
 
 	override public function render(graphics:Graphics){
+		graphics.color = Color.White;
 		super.render(graphics);
 	}
 }

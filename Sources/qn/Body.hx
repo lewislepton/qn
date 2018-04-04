@@ -18,6 +18,7 @@ import nape.shape.Circle;
 import nape.shape.Polygon;
 import nape.geom.Vec2;
 import nape.phys.Material;
+import nape.callbacks.CbType;
 
 /*
 MATERIAL CHEAT SHEET
@@ -60,9 +61,13 @@ class CircleShape {
 		graphics.popTransformation();
 	}
 
-	public function material(?elastic:Float = 1, ?dynamicFriction:Float = 0.2, ?staticFriction:Float = 0.4, ?density:Float = 1, ?rotateFriction:Float = 0.001):Void {
+	public function material(elastic:Float = 1, dynamicFriction:Float = 0.2, ?staticFriction:Float = 0.4, ?density:Float = 1, rotateFriction:Float = 0.001):Void {
 		if (body == null) return;
 		body.setShapeMaterials(new Material(elastic, dynamicFriction, staticFriction, density, rotateFriction));
+	}
+
+	public function position(x:Float, y:Float):Vec2 {
+		return body.position.set(new Vec2(x, y));
 	}
 
 	public function impulse(x:Float, y:Float):Body {
@@ -85,15 +90,14 @@ class CircleShape {
 		return shape.sensorEnabled = value;
 	}
 
-	// public function setMaterials(?material:Material):Body {
-	// 	// if (body == null) return;
-	// 	return body.setShapeMaterials(material);
-	// }
+	public function addType(cbType:CbType):Bool {
+		return body.cbTypes.add(cbType);
+	}
 }
 
 class CircleImage {
-	public var body:Body;
-  public var shape:Circle;
+	var body:Body;
+  var shape:Circle;
 
   public var image:Image;
 
@@ -120,6 +124,10 @@ class CircleImage {
 		body.setShapeMaterials(new Material(elastic, dynamicFriction, staticFriction, density, rotateFriction));
 	}
 
+	public function position(x:Float, y:Float):Vec2 {
+		return body.position.set(new Vec2(x, y));
+	}
+
 	public function impulse(x:Float, y:Float):Body {
 		return body.applyImpulse(new Vec2(x, y));
 	}
@@ -138,6 +146,10 @@ class CircleImage {
 
 	public function sensorEnabled(value:Bool = false):Bool {
 		return shape.sensorEnabled = value;
+	}
+
+	public function addType(cbType:CbType):Bool {
+		return body.cbTypes.add(cbType);
 	}
 }
 ///
@@ -174,6 +186,10 @@ class RectShape {
 		body.setShapeMaterials(new Material(elastic, dynamicFriction, staticFriction, density, rotateFriction));
 	}
 
+	public function position(x:Float, y:Float):Vec2 {
+		return body.position.set(new Vec2(x, y));
+	}
+
 	public function impulse(x:Float, y:Float):Body {
 		return body.applyImpulse(new Vec2(x, y));
 	}
@@ -192,6 +208,10 @@ class RectShape {
 
 	public function sensorEnabled(value:Bool = false):Bool {
 		return shape.sensorEnabled = value;
+	}
+
+	public function addType(cbType:CbType):Bool {
+		return body.cbTypes.add(cbType);
 	}
 }
 
@@ -224,6 +244,10 @@ class RectImage {
 		body.setShapeMaterials(new Material(elastic, dynamicFriction, staticFriction, density, rotateFriction));
 	}
 
+	public function position(x:Float, y:Float):Vec2 {
+		return body.position.set(new Vec2(x, y));
+	}
+
 	public function impulse(x:Float, y:Float):Body {
 		return body.applyImpulse(new Vec2(x, y));
 	}
@@ -242,6 +266,10 @@ class RectImage {
 
 	public function sensorEnabled(value:Bool = false):Bool {
 		return shape.sensorEnabled = value;
+	}
+
+	public function addType(cbType:CbType):Bool {
+		return body.cbTypes.add(cbType);
 	}
 }
 ///

@@ -14,52 +14,36 @@ import nape.callbacks.CbType;
 
 import qn.World;
 
+/*
+COLLISION CHEAT SHEET
+1:- collision - tested
+2:- sensor - tested
+3:- fluid - have not properly tested with this yet
+4:- any
+*/
+
 class Listen {
-	public static var collision:CbType = new CbType();
-	public static var listen:InteractionListener;
-	public static var hasCollided:Bool = false;
-	public static var hasSensored:Bool = false;
+	var listen:InteractionListener;
+	public var collision:CbType = new CbType();
+	public var hasCollided:Bool = false;
+	public var hasSensored:Bool = false;
 
-	// public static inline public function setup(){
-	// 	listen = new InteractionListener()
-	// }
-
-	public static function setupCollision(){
-		listen = new InteractionListener(CbEvent.BEGIN, InteractionType.COLLISION, collision, collision, contact);
+	public function new(cbType:Int){
+		switch (cbType){
+			case 1: listen = new InteractionListener(CbEvent.BEGIN, InteractionType.COLLISION, collision, collision, contact);
+			case 2: listen = new InteractionListener(CbEvent.BEGIN, InteractionType.SENSOR, collision, collision, sensor);
+			case 3: listen = new InteractionListener(CbEvent.BEGIN, InteractionType.FLUID, collision, collision, contact);
+			case 4: listen = new InteractionListener(CbEvent.BEGIN, InteractionType.ANY, collision, collision, sensor);
+		default: return;
+		}
 		World.space.listeners.add(listen);
 	}
 
-	public static function setupFluid(){
-		listen = new InteractionListener(CbEvent.BEGIN, InteractionType.FLUID, collision, collision, contact);
-		World.space.listeners.add(listen);
-	}
-
-	public static function setupSensor(){
-		listen = new InteractionListener(CbEvent.BEGIN, InteractionType.SENSOR, collision, collision, sensor);
-		World.space.listeners.add(listen);
-	}
-
-	public static function setupAny(){
-		listen = new InteractionListener(CbEvent.BEGIN, InteractionType.ANY, collision, collision, sensor);
-		World.space.listeners.add(listen);
-	}
-
-	public static function contact(collide:InteractionCallback){
-		// if (hasCollided){
-		// 	hasCollided = true;
-		// } else {
-		// 	hasCollided = false;
-		// }
+	function contact(collide:InteractionCallback){
 		hasCollided = true;
-		// return false;
 	}
 
-	public static function sensor(collide:InteractionCallback){
-		// if (hasSensored){
-			hasSensored = true;
-		// } else {
-		// 	hasSensored = false;
-		// }
-		// return false;
+	function sensor(collide:InteractionCallback){
+		hasSensored = true;
 	}
 }
