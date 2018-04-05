@@ -25,3 +25,7 @@ also check out the given example[s]
 - [ ] make more examples<br>
 - [ ] able to change rotation point. so far its only in the middle<br>
 - [ ] many more things... but cant think right now ;)
+
+![image](image/imageshape.png)
+![image](image/listencollidesensor.png)
+![image](image/multishape.png)
