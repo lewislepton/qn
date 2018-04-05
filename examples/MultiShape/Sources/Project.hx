@@ -49,7 +49,7 @@ class Project {
 
 	public function render(framebuffer:Framebuffer):Void {
 		var graphics = framebuffer.g2;
-		graphics.begin();
+		graphics.begin(true, Color.fromFloats(0.67, 0.82, 0.42, 1.00));
 
 		floor.render(graphics);
 		leftWall.render(graphics);
