@@ -42,6 +42,7 @@ class CircleShape {
 
 	public var body:Body;
 	public var shape:Circle;
+	public var fill:Bool;
 
 	public function new(space:Space, ?radius:Float = 32, ?sensorEnabled:Bool = false){
 		this.radius = radius;
@@ -57,7 +58,11 @@ class CircleShape {
 		var pos:Vec2;
 		pos = body.position;
 		graphics.pushRotation(body.rotation, pos.x, pos.y);
-		graphics.drawCircle(body.position.x, body.position.y, radius / 2);
+		if (fill){
+			graphics.fillCircle(body.position.x, body.position.y, radius / 2);
+		} else {
+			graphics.drawCircle(body.position.x, body.position.y, radius / 2);
+		}
 		graphics.popTransformation();
 	}
 
@@ -162,6 +167,8 @@ class RectShape {
 	public var body:Body;
 	public var shape:Polygon;
 
+	public var fill:Bool;
+
 	public function new(space:Space, ?width:Float = 64, ?height:Float = 64, ?sensorEnabled:Bool = false){
 		this.width = width;
 		this.height = height;
@@ -177,7 +184,11 @@ class RectShape {
 		var pos:Vec2;
 		pos = body.position;
 		graphics.pushRotation(body.rotation, pos.x, pos.y);
-		graphics.drawRect(body.position.x - width / 2, body.position.y - height / 2, width, height);
+		if (fill){
+			graphics.fillRect(body.position.x - width / 2, body.position.y - height / 2, width, height);
+		} else {
+			graphics.drawRect(body.position.x - width / 2, body.position.y - height / 2, width, height);
+		}
 		graphics.popTransformation();
 	}
 
