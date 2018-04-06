@@ -7,10 +7,6 @@ https://lewislepton.com
 
 import nape.space.Space;
 import nape.geom.Vec2;
-import nape.phys.Body;
-import nape.phys.BodyType;
-import nape.phys.Material;
-import nape.shape.Polygon;
 
 class World {
 	public static var space:Space;

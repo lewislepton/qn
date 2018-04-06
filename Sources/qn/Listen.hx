@@ -5,7 +5,6 @@ package qn;
 https://lewislepton.com
 */
 
-import nape.phys.Body;
 import nape.callbacks.InteractionListener;
 import nape.callbacks.InteractionType;
 import nape.callbacks.InteractionCallback;
@@ -18,8 +17,8 @@ import qn.World;
 COLLISION CHEAT SHEET
 1:- collision - tested
 2:- sensor - tested
-3:- fluid - have not properly tested with this yet
-4:- any
+3:- fluid - not tested
+4:- any - not tested
 */
 
 class Listen {

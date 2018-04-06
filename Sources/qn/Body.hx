@@ -3,8 +3,6 @@ package qn;
 /*
 @uthor lewis lepton 2018
 https://lewislepton.com
-
-the bodies X/Y starts in the center
 */
 
 import kha.graphics2.Graphics;
@@ -13,7 +11,6 @@ import kha.Image;
 
 import nape.space.Space;
 import nape.phys.Body;
-import nape.phys.BodyType;
 import nape.shape.Circle;
 import nape.shape.Polygon;
 import nape.geom.Vec2;
