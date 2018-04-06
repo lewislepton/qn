@@ -16,7 +16,7 @@ class World {
 	public static var velocityIterations:Int = 10;
 	public static var positionIterations:Int = 10;
 
-	public static function setup(gravityX:Float, gravityY:Float){
+	public static function setup(?gravityX:Float = 0, ?gravityY:Float = 0){
 		space = new Space(new Vec2(gravityX, gravityY));
 	}
 

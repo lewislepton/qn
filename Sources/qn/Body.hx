@@ -92,8 +92,44 @@ class CircleShape {
 		return shape.sensorEnabled = value;
 	}
 
+	public function sensorGroup(value:Int = 1):Int {
+		return shape.filter.sensorGroup = value;
+	}
+
+	public function sensorMask(value:Int = -1):Int {
+		return shape.filter.sensorMask = value;
+	}
+
 	public function addType(cbType:CbType):Bool {
 		return body.cbTypes.add(cbType);
+	}
+
+	public function fluidEnabled(value:Bool = false):Bool {
+		return shape.fluidEnabled = value;
+	}
+
+	public function fluidMask(value:Int = -1):Int {
+		return shape.filter.fluidMask = value;
+	}
+	
+	public function fluidGroup(value:Int = 1):Int {
+		return shape.filter.fluidGroup = value;
+	}
+
+	public function density(value:Float = 1):Float {
+		return shape.fluidProperties.density = value;
+	}
+
+	public function viscosity(value:Float = 1):Float {
+		return shape.fluidProperties.viscosity = value;
+	}
+
+	public function collisionGroup(value:Int = 1):Int {
+		return shape.filter.collisionGroup = value;
+	}
+
+	public function collisionMask(value:Int = -1):Int {
+		return shape.filter.collisionGroup = value;
 	}
 }
 
@@ -150,8 +186,44 @@ class CircleImage {
 		return shape.sensorEnabled = value;
 	}
 
+	public function sensorGroup(value:Int = 1):Int {
+		return shape.filter.sensorGroup = value;
+	}
+
+	public function sensorMask(value:Int = -1):Int {
+		return shape.filter.sensorMask = value;
+	}
+
 	public function addType(cbType:CbType):Bool {
 		return body.cbTypes.add(cbType);
+	}
+
+	public function fluidEnabled(value:Bool = false):Bool {
+		return shape.fluidEnabled = value;
+	}
+
+	public function fluidMask(value:Int = -1):Int {
+		return shape.filter.fluidMask = value;
+	}
+	
+	public function fluidGroup(value:Int = 1):Int {
+		return shape.filter.fluidGroup = value;
+	}
+
+	public function density(value:Float = 1):Float {
+		return shape.fluidProperties.density = value;
+	}
+
+	public function viscosity(value:Float = 1):Float {
+		return shape.fluidProperties.viscosity = value;
+	}
+
+	public function collisionGroup(value:Int = 1):Int {
+		return shape.filter.collisionGroup = value;
+	}
+
+	public function collisionMask(value:Int = -1):Int {
+		return shape.filter.collisionGroup = value;
 	}
 }
 ///
@@ -218,8 +290,44 @@ class RectShape {
 		return shape.sensorEnabled = value;
 	}
 
+	public function sensorGroup(value:Int = 1):Int {
+		return shape.filter.sensorGroup = value;
+	}
+
+	public function sensorMask(value:Int = -1):Int {
+		return shape.filter.sensorMask = value;
+	}
+
 	public function addType(cbType:CbType):Bool {
 		return body.cbTypes.add(cbType);
+	}
+
+	public function fluidEnabled(value:Bool = false):Bool {
+		return shape.fluidEnabled = value;
+	}
+
+	public function fluidMask(value:Int = -1):Int {
+		return shape.filter.fluidMask = value;
+	}
+	
+	public function fluidGroup(value:Int = 1):Int {
+		return shape.filter.fluidGroup = value;
+	}
+
+	public function density(value:Float = 1):Float {
+		return shape.fluidProperties.density = value;
+	}
+
+	public function viscosity(value:Float = 1):Float {
+		return shape.fluidProperties.viscosity = value;
+	}
+
+	public function collisionGroup(value:Int = 1):Int {
+		return shape.filter.collisionGroup = value;
+	}
+
+	public function collisionMask(value:Int = -1):Int {
+		return shape.filter.collisionGroup = value;
 	}
 }
 
@@ -276,8 +384,44 @@ class RectImage {
 		return shape.sensorEnabled = value;
 	}
 
+	public function sensorGroup(value:Int = 1):Int {
+		return shape.filter.sensorGroup = value;
+	}
+
+	public function sensorMask(value:Int = -1):Int {
+		return shape.filter.sensorMask = value;
+	}
+
 	public function addType(cbType:CbType):Bool {
 		return body.cbTypes.add(cbType);
+	}
+
+	public function fluidEnabled(value:Bool = false):Bool {
+		return shape.fluidEnabled = value;
+	}
+
+	public function fluidMask(value:Int = -1):Int {
+		return shape.filter.fluidMask = value;
+	}
+	
+	public function fluidGroup(value:Int = 1):Int {
+		return shape.filter.fluidGroup = value;
+	}
+
+	public function density(value:Float = 1):Float {
+		return shape.fluidProperties.density = value;
+	}
+
+	public function viscosity(value:Float = 1):Float {
+		return shape.fluidProperties.viscosity = value;
+	}
+
+	public function collisionGroup(value:Int = 1):Int {
+		return shape.filter.collisionGroup = value;
+	}
+
+	public function collisionMask(value:Int = -1):Int {
+		return shape.filter.collisionGroup = value;
 	}
 }
 ///
