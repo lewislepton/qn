@@ -43,7 +43,6 @@ class Player extends CircleShape {
 	public function onKeyDown(keyCode:KeyCode):Void {
 		switch (keyCode){
 			case KeyCode.Up: up = true;
-			case KeyCode.Down: down = true;
 			case KeyCode.Left: left = true;
 			case KeyCode.Right: right = true;
 		default: return;
@@ -53,7 +52,6 @@ class Player extends CircleShape {
 	public function onKeyUp(keyCode:KeyCode):Void {
 		switch (keyCode){
 			case KeyCode.Up: up = false;
-			case KeyCode.Down: down = false;
 			case KeyCode.Left: left = false;
 			case KeyCode.Right: right = false;
 		default: return;
