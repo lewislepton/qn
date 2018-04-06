@@ -20,7 +20,7 @@ also check out the given example[s]
 
 # todo
 - [X] work further on world class further & make it cut out using space in the project<br>
-- [ ] work on bouncing stuff<br>
+- [X] work on bouncing stuff<br>
 - [ ] extend things further<br>
 - [ ] make more examples<br>
 - [ ] able to change rotation point. so far its only in the middle<br>
@@ -28,7 +28,8 @@ also check out the given example[s]
 
 # examples
 
-![image](image/imageshape.png)
-![image](image/listencollidesensor.png)
-![image](image/multishape.png)
-![image](image/onewayplatforms.png)
+![imageshape](image/imageshape.png)
+![listencollidesensor](image/listencollidesensor.png)
+![multishape](image/multishape.png)
+![onewayplatforms](image/onewayplatforms.png)
+![fluidbodies](image/fluidbodies.png)
