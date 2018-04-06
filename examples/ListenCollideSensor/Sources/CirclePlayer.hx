@@ -1,6 +1,5 @@
 import kha.graphics2.Graphics;
 import kha.Color;
-import kha.Image;
 import kha.Assets;
 
 import qn.World;

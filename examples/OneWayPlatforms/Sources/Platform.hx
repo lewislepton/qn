@@ -1,7 +1,5 @@
 import kha.graphics2.Graphics;
-using kha.graphics2.GraphicsExtension;
 import kha.Color;
-import kha.Assets;
 
 import qn.World;
 import qn.Body.RectShape;
@@ -12,10 +10,6 @@ class Platform extends RectShape {
 		fill = true;
 		allowMovement(false);
 		allowRotation(false);
-	}
-
-	public function update(){
-		
 	}
 
 	override public function render(graphics:Graphics){

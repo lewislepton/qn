@@ -2,7 +2,6 @@ package;
 
 import kha.Framebuffer;
 import kha.Color;
-import kha.Assets;
 import kha.input.Mouse;
 
 import qn.World;

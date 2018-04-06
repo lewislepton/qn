@@ -1,6 +1,5 @@
 import kha.graphics2.Graphics;
 import kha.Color;
-import kha.Image;
 import kha.Assets;
 
 import qn.World;
@@ -12,6 +11,7 @@ class CirclePlayer extends CircleImage {
 	}
 
 	override public function render(graphics:Graphics){
+		graphics.color = Color.White;
 		super.render(graphics);
 	}
 }

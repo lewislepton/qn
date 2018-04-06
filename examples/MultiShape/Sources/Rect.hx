@@ -1,7 +1,4 @@
 import kha.graphics2.Graphics;
-using kha.graphics2.GraphicsExtension;
-import kha.Color;
-import kha.Assets;
 
 import qn.World;
 import qn.Body.RectShape;
@@ -26,10 +23,6 @@ class Rect extends RectShape {
 		
 		position(x, y);
 		activate(x, y);
-	}
-
-	public function update(){
-		
 	}
 
 	override public function render(graphics:Graphics){

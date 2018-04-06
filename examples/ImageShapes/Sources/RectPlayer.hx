@@ -1,6 +1,5 @@
 import kha.graphics2.Graphics;
 import kha.Color;
-import kha.Image;
 import kha.Assets;
 
 import qn.World;
@@ -11,11 +10,8 @@ class RectPlayer extends RectImage {
 		super(World.space, Assets.images.rect);
 	}
 
-	public function update(){
-		
-	}
-
 	override public function render(graphics:Graphics){
+		graphics.color = Color.White;
 		super.render(graphics);
 	}
 }
